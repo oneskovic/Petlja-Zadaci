@@ -4,7 +4,7 @@ using namespace std;
 #define ll long long
 
 /// <summary>
-/// Checks if there exist any series of successive natural numbers
+/// Checks if there exists any series of successive natural numbers
 /// of given length that sums to the given sum </summary>
 bool check_length(ll length, ll sum)
 {
