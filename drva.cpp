@@ -4,12 +4,12 @@
 #define ll long long
 using namespace std;
 
-ll evaluate_solution(int solution, vector<ll>* lengths, ll target)
+ll evaluate_solution(int solution, const vector<ll>& lengths, ll target)
 {
 	ll sum = 0;
-	for (size_t i = 0; i < lengths->size(); i++)
+	for (size_t i = 0; i < lengths.size(); i++)
 	{
-		sum += max((ll)0, lengths->at(i) - solution);
+		sum += max((ll)0, lengths[i] - solution);
 		if (sum > target)
 			break;
 	}
@@ -32,7 +32,7 @@ int main()
 	while (l <= r)
 	{
 		int mid = (l + r) / 2;
-		ll solution = evaluate_solution(mid, &lengths, target);
+		ll solution = evaluate_solution(mid, lengths, target);
 		if (solution >= target)
 			l = mid + 1;
 		else
